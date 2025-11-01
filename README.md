@@ -1,36 +1,113 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 💬 Amana Chat
 
-## Getting Started
+A real-time chat application built with Next.js, React, TypeScript, and Ably for seamless multi-user communication.
 
-First, run the development server:
+## 🌟 Features
+
+- ✅ Real-time messaging between multiple users
+- ✅ Online presence tracking
+- ✅ Secure token-based authentication
+- ✅ Modern gradient UI with smooth animations
+- ✅ Connection status indicators
+- ✅ Responsive design
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Node.js 18+
+- Ably account ([sign up here](https://ably.com/sign-up))
+
+### Installation
 
 ```bash
+# Clone the repository
+git clone <your-repository-url>
+cd amana-chat
+
+# Install dependencies
+npm install
+
+# Create environment file
+echo "ABLY_API_KEY=your_ably_api_key_here" > .env.local
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) and test with multiple browser windows.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📁 Project Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+amana-chat/
+├── app/
+│   ├── api/ably-auth/route.ts    # Server-side authentication
+│   └── page.tsx                   # Main chat interface
+├── .env.local                     # Environment variables
+```
 
-## Learn More
+## 🔒 Security
 
-To learn more about Next.js, take a look at the following resources:
+The app uses secure token-based authentication:
+- API key stored server-side only (`.env.local`)
+- Client receives temporary tokens from `/api/ably-auth`
+- API key never exposed to browser
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🌐 Deploy to Vercel
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+# Push to GitHub
+git init
+git add .
+git commit -m "Initial commit"
+git push origin main
 
-## Deploy on Vercel
+# Deploy on Vercel
+# 1. Import your GitHub repo at vercel.com
+# 2. Add environment variable: ABLY_API_KEY
+# 3. Deploy
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🧪 Testing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**Multi-User Test:**
+1. Open 2-3 browser windows
+2. Join with different usernames
+3. Send messages and verify real-time delivery
+4. Check online users list updates
+
+## 🛠️ Technology Stack
+
+- **Framework:** Next.js 15+ (App Router)
+- **Language:** TypeScript
+- **Real-time:** Ably SDK
+- **Styling:** Tailwind CSS
+
+## 🐛 Troubleshooting
+
+**Connection issues?**
+- Verify Ably API key is correct in `.env.local`
+- Check browser console for errors
+- Restart development server after changing env variables
+
+**Messages not syncing?**
+- Ensure all windows use different usernames
+- Check internet connection
+- Verify Ably service status
+
+## 📄 Assignment Requirements
+
+This project fulfills the Amana Bootcamp final assignment:
+- ✅ Ably API integration
+- ✅ Secure environment variable setup
+- ✅ Multi-user real-time chat
+- ✅ Deployed and functional
+
+## 👥 Authors
+
+**Bayan Lulu** - Amana Bootcamp Student
+
+## 🙏 Acknowledgments
+
+Built with ❤️ for Amana Bootcamp using [Ably](https://ably.com), [Next.js](https://nextjs.org), and [Tailwind CSS](https://tailwindcss.com).
